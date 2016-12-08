@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom"; 
 import NavigationBar from "./NavigationBar";
+import SubAbout from "./SubAbout";
 
 
 export default class About extends React.Component{
