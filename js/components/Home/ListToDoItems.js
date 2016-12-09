@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom"; 
-import {DeleteItem, EditIconClicked, EditItem, CompleteItem} from "../../Actions/Actions";
+import {DeleteItem, EditIconClicked, EditItem, CompleteItem} from "../../Actions/ToDoActions";
 import Redux from "redux";
 import { connect} from "react-redux";
 
@@ -19,7 +19,7 @@ import ModalFooter from 'react-bootstrap/lib/ModalFooter';
 import FormControl from 'react-bootstrap/lib/FormControl';
 
 const mapStateToProps = (state) => ({
-  items: state.items
+  items: state.todoReducer.items
 })
 
 

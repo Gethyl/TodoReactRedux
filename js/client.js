@@ -10,12 +10,12 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import Layout from "./components/Layout";
 import About from "./components/About/About";
 import Help from "./components/Help/Help";
-import todoReducer from "./Reducers/Reducers";
+import allReducer from "./Reducers/AllReducers";
 
 
 const app = document.getElementById('app');
 
-const store = createStore(todoReducer);
+const store = createStore(allReducer);
 // console.log(store.getState());
 
 ReactDOM.render(

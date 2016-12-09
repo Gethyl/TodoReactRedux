@@ -24,20 +24,20 @@ export default class NavigationBar extends React.Component{
 	render(){	
 
 		
-		let brand = <a href='#'>Project Name</a>;
+		// let brand = <a href='#'>Project Name</a>;
 		// console.log(this.props.children)	;
 		return(
 			<div>
-				<Navbar brand={brand} fixedTop inverse toggleNavKey={0}>
-			        <Nav right eventKey={0}>
+				<Navbar  fixedTop inverse >
+			        <Nav  >
 			        	<LinkContainer to="/">
-				          <NavItem eventKey={1}>Home</NavItem>
+				          <NavItem >Home</NavItem>
 				        </LinkContainer>
 				        <LinkContainer to="/about">
-				          <NavItem eventKey={2}>About</NavItem>
+				          <NavItem >About</NavItem>
 				        </LinkContainer>
 				        <LinkContainer to="/help">
-				          <NavItem eventKey={3}>Help</NavItem>
+				          <NavItem >Help</NavItem>
 				        </LinkContainer>	      				  
 			        </Nav>
 		      	</Navbar>
