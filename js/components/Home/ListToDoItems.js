@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom"; 
-import {DeleteItem, EditIconClicked, EditItem, CompleteItem} from "../Actions/Actions";
+import {DeleteItem, EditIconClicked, EditItem, CompleteItem} from "../../Actions/Actions";
 import Redux from "redux";
 import { connect} from "react-redux";
 

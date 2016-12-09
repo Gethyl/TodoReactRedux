@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Redux from "redux";
 import { connect} from "react-redux";
 
-import {AddItem} from "../Actions/Actions";
+import {AddItem} from "../../Actions/Actions";
 
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';

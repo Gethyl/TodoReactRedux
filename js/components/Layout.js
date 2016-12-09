@@ -1,7 +1,7 @@
 import React from "react";
 import { LinkContainer } from 'react-router-bootstrap';
 
-import TodoList from './TodoList';
+import TodoList from './Home/TodoList';
 import NavigationBar from "./NavigationBar";
 
 import Navbar from 'react-bootstrap/lib/Navbar';

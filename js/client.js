@@ -8,8 +8,8 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 
 import Layout from "./components/Layout";
-import About from "./components/About";
-import Help from "./components/Help";
+import About from "./components/About/About";
+import Help from "./components/Help/Help";
 import todoReducer from "./Reducers/Reducers";
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom"; 
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "../NavigationBar";
 import SubAbout from "./SubAbout";
 
 
