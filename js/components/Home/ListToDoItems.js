@@ -25,10 +25,6 @@ const mapStateToProps = (state) => ({
 
 @connect(mapStateToProps)
 export default class ListToDoItems extends React.Component{
-	constructor() {
-		super();
-		
-	}
 	close(id,editedItem){
 		this.props.dispatch(EditItem(id, editedItem));	
 	}

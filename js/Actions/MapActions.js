@@ -1,7 +1,12 @@
 
-export const DropPin = (item) => ({
-	type: "DROP_PIN",
-	item: item
+export const AddPin = (newMarker) => ({
+	type: "ADD_PIN",
+	newMarker: newMarker
+})
+
+export const RemovePin = (index) => ({
+	type: "REMOVE_PIN",
+	index: index
 })
 
 

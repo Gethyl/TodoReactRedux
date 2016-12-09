@@ -14,7 +14,6 @@ import Button from 'react-bootstrap/lib/Button';
 
 @connect()
 export default class AddTodo extends React.Component{
-
 	render(){	
 		return(
 			<div>

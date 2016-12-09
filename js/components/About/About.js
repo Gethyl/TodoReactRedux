@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom"; 
+import {AddPin,RemovePin} from "../../Actions/MapActions";
+import Redux from "redux";
+import { connect} from "react-redux";
+
+
 import NavigationBar from "../NavigationBar";
 import SubAbout from "./SubAbout";
 
@@ -9,63 +14,27 @@ import Col from 'react-bootstrap/lib/Col';
 
 import { GoogleMapLoader, GoogleMap, Marker, SearchBox } from "react-google-maps";
 
-
 import update from 'immutability-helper';
 
 
+const mapStateToProps = (state) => ({
+  markers: state.mapsReducer.markers
+})
+
+@connect(mapStateToProps)
 export default class About extends React.Component{
 	
-	state = {
-         markers: [{
-             position: {
-                 lat: 12.9716,
-                 lng: 77.5946,
-             },
-             key: "Bangalore",
-             defaultAnimation: 2
-         }]
-     };
-
-	// constructor(props) {
-	// 	super(props);
-	// 	console.dir(props);
-	// }
-
 	handleMapClick (event) {
-        var {markers} = this.state;
-
-        markers = update(markers, {
-            $push: [
-                {
-                    position: event.latLng,
-                    defaultAnimation: 2,
-                    key: Date.now()// Add a key property for: http://fb.me/react-warning-keys
-                },
-            ],
-        });
-        this.setState({ markers });
-
-        if (3 === markers.length) {
-            this.props.toast(
-                "Right click on the marker to remove it",
-                "Also check the code!"
-            );
-        }
+		var newMarker = {
+		                    position: event.latLng,
+		                    defaultAnimation: 2,
+		                    key: Date.now()// Add a key property for: http://fb.me/react-warning-keys
+		                }
+        this.props.dispatch(AddPin(newMarker));
     }
 
     handleMarkerRightclick (index, event) {
-        /*
-         * All you modify is data, and the view is driven by data.
-         * This is so called data-driven-development. (And yes, it's now in
-         * web front end and even with google maps API.)
-         */
-        var {markers} = this.state;
-        markers = update(markers, {
-            $splice: [
-                [index, 1]
-            ],
-        });
-        this.setState({ markers });
+        this.props.dispatch(RemovePin(index));
     }
 
 
@@ -94,8 +63,11 @@ export default class About extends React.Component{
 						            ref={(map) => console.log(map)}
 						            defaultZoom={5}
 						            defaultCenter={{ lat: 12.9716, lng: 77.5946 }}
-						          	onClick={this.handleMapClick}>
-						                {this.state.markers.map((marker, index) => {
+						            defaultOptions = {{
+						            					streetViewControl:false
+						        					 }}
+						          	onClick={this.handleMapClick.bind(this)}>
+						                {this.props.markers.map((marker, index) => {
 						              return (
 						                <Marker
 						                  {...marker}
@@ -108,6 +80,8 @@ export default class About extends React.Component{
 				      </Col>
 				    </Row>
 			    </Grid>
+
+			    <SubAbout></SubAbout>
 				
 			</div>
 		);

@@ -3,11 +3,6 @@ import ReactDOM from "react-dom";
 
 
 export default class SubAbout extends React.Component{
-	constructor() {
-		super();
-	}
-
-
 	render(){	
 		return(
 			<div>
